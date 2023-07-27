@@ -1,0 +1,33 @@
+<header>
+  <div class="main">
+    <div class="p-col-3">
+      <div class="logo">
+        <img src="https://cdn.pixabay.com/photo/2016/10/10/14/46/icon-1728552_1280.jpg" alt="logo" width="40"/>
+      </div>
+    </div>
+    <!-- <div class="search">
+
+      <form (ngSubmit)="search()">
+        <input type="text" [(ngModel)]="searchQuery" name="searchQuery" placeholder="Enter search query" />
+        <button type="submit">Search</button>
+      </form>
+
+    </div> -->
+    <div class="p-col-3 p-offset-1 navigation">
+      <ul class="nav">
+        <li><a routerLink="/">Home</a></li>
+        <li><a routerLink="/products">Products</a></li>
+        <li><a routerLink="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="tools">
+      <i class="fa-solid fa-user"></i>
+      <i class="fa-solid fa-cart-shopping" routerLink="/cart">
+        <span  class="cartNumber">{{cartCount}}</span>
+      </i>
+
+
+    </div>
+  </div>
+</header>
+

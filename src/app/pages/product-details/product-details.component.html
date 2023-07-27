@@ -1,0 +1,94 @@
+<div class="container" *ngIf="product">
+  <div class="row">
+    <div class="col-6">
+      <!-- <div *ngIf="product.images">
+        <h4>Images:</h4>
+        <div *ngFor="let imageUrl of product.images">
+          <img [src]="imageUrl" alt="{{ product.name }}" style="max-width: 300px; max-height: 300px;">
+        </div>
+      </div> -->
+
+      <!-- <div *ngIf="product.images && product.images.length > 0">
+        <div id="imageCarousel" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div
+              *ngFor="let imageUrl of product.images; let i = index"
+              class="carousel-item"
+              [ngClass]="{ active: i === 0 }"
+            >
+              <img [src]="imageUrl" alt="{{ product.name }}" class="imagess" />
+            </div>
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#imageCarousel"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#imageCarousel"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div> -->
+      <div class="card image-container p-3" *ngIf="product.images && product.images.length > 0">
+        <img
+          [src]="product.images[selectedProductIndex]"
+          class="product-zoom-image"
+        />
+      </div>
+
+      <div class="mt-2">
+        <mat-grid-list cols="5" gutterSize="10" rowHeight="1:1">
+          <mat-grid-tile
+            *ngFor="let file of product.images; let i = index"
+            (click)="changeIndex(i)"
+            style="border: 1px solid lightgrey; cursor: pointer"
+          >
+            <img [src]="file" height="100px" />
+          </mat-grid-tile>
+        </mat-grid-list>
+      </div>
+    </div>
+    <div class="col-6 product">
+      <h2 class="product-name">{{ product.name }}</h2>
+      <p class="product-desc">
+        {{ product.description }}
+      </p>
+      <div class="product-rating"></div>
+      <div class="product-price">
+        <span class="price-before">${{ product.price }}</span>
+      </div>
+      <hr />
+      <div class="product-quantity">
+        <div class="field col-12 md-3">
+          <div class="input-group"></div>
+        </div>
+      </div>
+      <div class="product-actions">
+        <!-- Using Bootstrap classes for buttons -->
+        <button type="button" class="btn1 mr-2" (click)="addProductToCart(product.id)">Buy Now</button>
+        <button
+          type="button"
+          class="btn2"
+          (click)="addProductToCart(product.id)"
+        >
+          Add to Cart
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="row product-rich-desc">
+    <div class="col-12">
+      <div [innerHTML]="product.richDescription"></div>
+    </div>
+  </div>
+</div>

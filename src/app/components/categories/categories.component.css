@@ -1,0 +1,29 @@
+.p-grid{
+  display: grid;
+  gap: 1rem;
+
+}
+@media (min-width: 600px){
+  .p-grid{
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media (min-width: 900px){
+  .p-grid{
+    grid-template-columns: repeat(8, 1fr);
+  }
+}
+
+.category-name{
+  background-color:#e0e7ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 14px;
+  cursor: pointer;
+}
+h3 {
+
+   padding: 20px;
+}

@@ -1,0 +1,94 @@
+.imagess{
+  height: 400px;
+  width: 100%;
+
+}
+/* styles.scss */
+/* Change button text color and background color */
+.btn1 {
+  color: #ffffff;
+  background-color: #ef4444;
+  padding: 5px;
+  font-size: 14px;
+}
+
+/* Style the buttons on hover */
+.btn2 {
+  background-color: #dc2626;
+  padding: 5px;
+  color: #ffffff;
+  font-size: 14px;
+}
+.product-actions{
+  margin-top: 10px;
+}
+
+.product-name{
+  padding: 10px 0px;
+}
+.product-desc{
+  padding: 10px 0px;
+}
+.product-price{
+  color: #dc2626;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+
+/* Styles for the input group container */
+.input-group {
+  display: flex;
+  align-items: center;
+}
+
+/* Styles for the input element */
+.custom-input {
+  padding: 5px 10px;
+  border: 1px solid #ef4444;
+  border-radius: 4px;
+  width: 120px; /* Adjust the width as needed */
+}
+
+/* Styles for the buttons */
+.input-group button {
+  margin-left: 5px;
+  padding: 5px 10px;
+  border: 1px solid #ef4444;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #ef4444;
+}
+
+.input-group button:hover {
+  background-color: #ef4444;
+}
+
+
+
+.product-rich-desc{
+  padding: 0px 10px;
+  margin-top: 10px;
+  font-size: 15px;
+}
+
+
+.product-information {
+  font-size: medium;
+}
+
+.image-container {
+  height: 400px;
+  position: relative;
+}
+
+.product-zoom-image {
+  max-width: 90%;
+  max-height: 90%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}

@@ -1,0 +1,37 @@
+<div class="container row">
+  <div class="col-3" >
+    <h1>Categories</h1>
+    <div class="check">
+      <div class="ctg" *ngFor="let category of categories">
+        <input
+          [(ngModel)]="category.checked"
+          class="form-check-input"
+          type="checkbox"
+          value=""
+          id="category.id"
+          (change)="categoryFilter()"
+        />
+        <label class="form-check-label" for="{{ category.id }}">
+          {{ category.name }}
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-9">
+    <div class="cards">
+      <div class="product-item" *ngFor="let item of details">
+        <div class="product-item-wrapper">
+          <img [routerLink]="'/products/' + item.id" [src]="item.image" class="image" alt="" />
+          <h4 class="name">{{ item.name }}</h4>
+          <h5 class="price">{{ item.price | currency }}</h5>
+          <button class="add-to-cart" (click)="addProductToCart(item.id)">
+
+            <i class="fa-solid fa-cart-shopping"></i> Add to Cart
+
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
